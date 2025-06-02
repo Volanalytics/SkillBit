@@ -1,7 +1,8 @@
 {
-  "name": "my-app",
+  "name": "skillbit",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://volanalytics.github.io/SkillBit",
   "scripts": {
     "dev": "PORT=8000 next dev --turbopack",
     "build": "next build",

@@ -17,7 +17,8 @@ export const metadata: Metadata = {
   authors: [{ name: "SkillBit" }],
   creator: "SkillBit",
   publisher: "SkillBit",
-  robots: "index, follow"
+  robots: "index, follow",
+  metadataBase: new URL('https://volanalytics.github.io/SkillBit')
 }
 
 export const viewport = {

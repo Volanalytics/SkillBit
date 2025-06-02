@@ -9,7 +9,6 @@ permissions:
   contents: write
   pages: write
   id-token: write
-  deployments: write
 
 jobs:
   build-and-deploy:
@@ -30,12 +29,16 @@ jobs:
       - name: Build
         run: npm run build
 
-      - name: Add .nojekyll file
-        run: touch out/.nojekyll
+      - name: Configure Pages
+        uses: actions/configure-pages@v4
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: out
 
       - name: Deploy to GitHub Pages
-        uses: JamesIves/github-pages-deploy-action@v4
+        id: deployment
+        uses: actions/deploy-pages@v4
         with:
-          folder: out
-          branch: gh-pages
-          clean: true
+          token: ${{ github.token }}

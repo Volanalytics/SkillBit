@@ -13,8 +13,9 @@ const nextConfig = {
       },
     ],
   },
-  assetPrefix: '/SkillBit/',
+  assetPrefix: '/SkillBit',
   trailingSlash: true,
+  distDir: 'out',
 }
 
 module.exports = nextConfig

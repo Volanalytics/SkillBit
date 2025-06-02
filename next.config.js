@@ -1,8 +1,10 @@
 /** @type {import('next').NextConfig} */
+const isProd = process.env.NODE_ENV === 'production'
+
 const nextConfig = {
   output: 'export',
-  basePath: '/SkillBit',
-  assetPrefix: '/SkillBit/',
+  basePath: isProd ? '/SkillBit' : '',
+  assetPrefix: isProd ? '/SkillBit/' : '',
   images: {
     unoptimized: true,
     remotePatterns: [
@@ -16,5 +18,11 @@ const nextConfig = {
   },
   trailingSlash: true,
 }
+
+console.log('Next.js Config:', {
+  isProd,
+  basePath: nextConfig.basePath,
+  assetPrefix: nextConfig.assetPrefix
+})
 
 module.exports = nextConfig

@@ -1,7 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   output: 'export',
-  basePath: '/SkillBit',
   images: {
     unoptimized: true,
     remotePatterns: [
@@ -13,9 +12,15 @@ const nextConfig = {
       },
     ],
   },
-  assetPrefix: '/SkillBit',
-  trailingSlash: true,
-  distDir: 'out',
+}
+
+const isGithubActions = process.env.GITHUB_ACTIONS || false
+
+if (isGithubActions) {
+  // trim off `<owner>/`
+  const repo = process.env.GITHUB_REPOSITORY.replace(/.*?\//, '')
+  nextConfig.basePath = `/${repo}`
+  nextConfig.assetPrefix = `/${repo}/`
 }
 
 module.exports = nextConfig

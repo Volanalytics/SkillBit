@@ -2,6 +2,8 @@
 
 SkillBit is a modern learning platform that offers AI-powered micro-courses on trending topics. Learn anything in bite-sized lessons.
 
+Visit the live site: https://volanalytics.github.io/SkillBit/
+
 ## Features
 
 - Modern, responsive UI built with Next.js and Tailwind CSS
@@ -36,6 +38,16 @@ npm run dev
 ```
 
 4. Open [http://localhost:8000](http://localhost:8000) in your browser.
+
+## Deployment
+
+The site is automatically deployed to GitHub Pages when changes are pushed to the main branch. To enable GitHub Pages:
+
+1. Go to repository Settings
+2. Navigate to Pages section
+3. Under "Build and deployment":
+   - Source: Select "GitHub Actions"
+   - Branch: Leave as is (deployment is handled by workflow)
 
 ## Project Structure
 

@@ -16,7 +16,7 @@ export function Footer() {
               {["Finance", "Technology", "DIY & Crafts", "Photography"].map((category) => (
                 <li key={category}>
                   <a 
-                    href={`/category/${category.toLowerCase().replace(" & ", "-")}`}
+                    href={`/SkillBit/category/${category.toLowerCase().replace(" & ", "-")}`}
                     className="text-sm text-muted-foreground hover:text-foreground transition-colors"
                   >
                     {category}
@@ -32,7 +32,7 @@ export function Footer() {
               {["About", "Blog", "Careers", "Contact"].map((item) => (
                 <li key={item}>
                   <a 
-                    href={`/${item.toLowerCase()}`}
+                    href={`/SkillBit/${item.toLowerCase()}`}
                     className="text-sm text-muted-foreground hover:text-foreground transition-colors"
                   >
                     {item}
@@ -48,7 +48,7 @@ export function Footer() {
               {["Terms", "Privacy", "Cookies"].map((item) => (
                 <li key={item}>
                   <a 
-                    href={`/${item.toLowerCase()}`}
+                    href={`/SkillBit/${item.toLowerCase()}`}
                     className="text-sm text-muted-foreground hover:text-foreground transition-colors"
                   >
                     {item}

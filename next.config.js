@@ -1,4 +1,7 @@
 /** @type {import('next').NextConfig} */
+const isGithubActions = process.env.GITHUB_ACTIONS || false
+const repo = process.env.GITHUB_REPOSITORY ? process.env.GITHUB_REPOSITORY.replace(/.*?\//, '') : ''
+
 const nextConfig = {
   output: 'export',
   images: {
@@ -13,17 +16,15 @@ const nextConfig = {
     ],
   },
   trailingSlash: true,
+  basePath: isGithubActions ? `/${repo}` : '',
+  assetPrefix: isGithubActions ? `/${repo}/` : '',
 }
 
-// Add basePath and assetPrefix only in production
-if (process.env.NODE_ENV === 'production') {
-  nextConfig.basePath = '/SkillBit'
-  nextConfig.assetPrefix = '/SkillBit/'
-  console.log('Production environment detected')
-  console.log('Base Path:', nextConfig.basePath)
-  console.log('Asset Prefix:', nextConfig.assetPrefix)
-} else {
-  console.log('Development environment detected')
-}
+console.log('Next.js Config:', {
+  isGithubActions,
+  repo,
+  basePath: nextConfig.basePath,
+  assetPrefix: nextConfig.assetPrefix
+})
 
 module.exports = nextConfig

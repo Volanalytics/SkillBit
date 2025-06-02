@@ -1,10 +1,11 @@
 /** @type {import('next').NextConfig} */
 const isProd = process.env.NODE_ENV === 'production'
+const repoName = 'SkillBit'
 
 const nextConfig = {
   output: 'export',
-  basePath: isProd ? '/SkillBit' : '',
-  assetPrefix: isProd ? '/SkillBit/' : '',
+  basePath: isProd ? `/${repoName}` : '',
+  assetPrefix: isProd ? `/${repoName}/` : '',
   images: {
     unoptimized: true,
     remotePatterns: [
@@ -22,7 +23,8 @@ const nextConfig = {
 console.log('Next.js Config:', {
   isProd,
   basePath: nextConfig.basePath,
-  assetPrefix: nextConfig.assetPrefix
+  assetPrefix: nextConfig.assetPrefix,
+  repoName,
 })
 
 module.exports = nextConfig

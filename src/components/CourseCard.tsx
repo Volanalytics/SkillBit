@@ -25,7 +25,7 @@ export function CourseCard({
 }: CourseCardProps) {
   return (
     <Card className="overflow-hidden transition-all hover:shadow-lg">
-      <Link href={`/course/${id}`} className="block">
+      <Link href={`/SkillBit/course/${id}`} className="block">
         <div className="aspect-video relative overflow-hidden">
           <img 
             src={image} 

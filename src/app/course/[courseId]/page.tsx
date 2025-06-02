@@ -76,13 +76,10 @@ export default function CoursePage({ params }: { params: { courseId: string } })
       {/* Course Hero */}
       <section className="relative h-[300px] overflow-hidden">
         <div className="absolute inset-0">
-          <Image 
+          <img 
             src={mockCourse.image} 
             alt={mockCourse.title}
-            fill
-            className="object-cover"
-            sizes="100vw"
-            priority
+            className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-background to-background/20" />
         </div>

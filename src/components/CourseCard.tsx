@@ -27,12 +27,10 @@ export function CourseCard({
     <Card className="overflow-hidden transition-all hover:shadow-lg">
       <Link href={`/course/${id}`} className="block">
         <div className="aspect-video relative overflow-hidden">
-          <Image 
+          <img 
             src={image} 
             alt={title}
-            fill
-            className="object-cover transition-transform hover:scale-105"
-            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+            className="w-full h-full object-cover transition-transform hover:scale-105"
           />
         </div>
         <CardHeader>

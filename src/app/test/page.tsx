@@ -1,6 +1,9 @@
+import { getBasePath } from "@/lib/path"
+
 export default function TestPage() {
   const isProd = process.env.NODE_ENV === 'production'
   const baseUrl = isProd ? 'https://volanalytics.github.io/SkillBit' : 'http://localhost:8000'
+  const basePath = getBasePath()
 
   return (
     <main className="min-h-screen pt-24">
@@ -40,9 +43,9 @@ export default function TestPage() {
             <div className="space-y-4">
               <p>Try these links to test navigation:</p>
               <div className="flex gap-4">
-                <a href="/SkillBit" className="text-primary hover:underline">Home</a>
-                <a href="/SkillBit/courses" className="text-primary hover:underline">Courses</a>
-                <a href="/SkillBit/dashboard" className="text-primary hover:underline">Dashboard</a>
+                <a href={basePath || '/'} className="text-primary hover:underline">Home</a>
+                <a href={`${basePath}/courses`} className="text-primary hover:underline">Courses</a>
+                <a href={`${basePath}/dashboard`} className="text-primary hover:underline">Dashboard</a>
               </div>
             </div>
           </section>

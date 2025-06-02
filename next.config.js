@@ -1,11 +1,12 @@
 /** @type {import('next').NextConfig} */
 const isProd = process.env.NODE_ENV === 'production'
+const isGitHubPages = process.env.GITHUB_PAGES === 'true'
 const repoName = 'SkillBit'
 
 const nextConfig = {
   output: 'export',
-  basePath: isProd ? `/${repoName}` : '',
-  assetPrefix: isProd ? `/${repoName}/` : '',
+  basePath: isProd && isGitHubPages ? `/${repoName}` : '',
+  assetPrefix: isProd && isGitHubPages ? `/${repoName}/` : '',
   images: {
     unoptimized: true,
     remotePatterns: [

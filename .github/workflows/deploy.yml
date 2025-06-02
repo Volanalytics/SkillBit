@@ -37,12 +37,16 @@ jobs:
       - name: Build
         env:
           NODE_ENV: production
+          GITHUB_PAGES: true
         run: |
-          echo "NODE_ENV: $NODE_ENV"
+          echo "Building with NODE_ENV=$NODE_ENV"
           npm run build
           touch out/.nojekyll
-          echo "Build output:"
+          cp -r .github out/
+          echo "Build output contents:"
           ls -la out/
+          echo "Verifying .nojekyll file:"
+          test -f out/.nojekyll && echo ".nojekyll exists" || echo ".nojekyll missing"
       
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3

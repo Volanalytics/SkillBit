@@ -1,5 +1,7 @@
 export const getBasePath = () => {
-  return process.env.NODE_ENV === 'production' ? '/SkillBit' : ''
+  const isProd = process.env.NODE_ENV === 'production'
+  const isGitHubPages = process.env.GITHUB_PAGES === 'true'
+  return isProd && isGitHubPages ? '/SkillBit' : ''
 }
 
 export const withBasePath = (path: string) => {

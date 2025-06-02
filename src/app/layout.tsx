@@ -10,6 +10,13 @@ const fontSans = FontSans({
   variable: "--font-sans",
 })
 
+const getMetadataBase = () => {
+  if (process.env.GITHUB_ACTIONS) {
+    return new URL('https://volanalytics.github.io/SkillBit')
+  }
+  return new URL('http://localhost:8000')
+}
+
 export const metadata: Metadata = {
   title: "SkillBit - AI-Powered Micro-Learning Platform",
   description: "Master new skills in bite-sized, AI-generated lessons",
@@ -18,7 +25,7 @@ export const metadata: Metadata = {
   creator: "SkillBit",
   publisher: "SkillBit",
   robots: "index, follow",
-  metadataBase: new URL('https://volanalytics.github.io/SkillBit')
+  metadataBase: getMetadataBase()
 }
 
 export const viewport = {

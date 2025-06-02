@@ -2,6 +2,7 @@
 
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
+import { withBasePath } from "@/lib/path"
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -16,7 +17,7 @@ export function Navbar() {
   return (
     <nav className="fixed top-0 w-full z-50 border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container flex h-16 items-center justify-between">
-        <Link href={process.env.NODE_ENV === 'production' ? '/SkillBit/' : '/'} className="flex items-center space-x-2">
+        <Link href={withBasePath('/')} className="flex items-center space-x-2">
           <span className="text-2xl font-bold">SkillBit</span>
         </Link>
 
@@ -28,7 +29,7 @@ export function Navbar() {
                 <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2">
                   <li className="row-span-3">
                     <NavigationMenuLink asChild>
-                      <Link href={process.env.NODE_ENV === 'production' ? '/SkillBit/category/personal-finance' : '/category/personal-finance'} className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md">
+                      <Link href={withBasePath('/category/personal-finance')} className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md">
                         <div className="mb-2 mt-4 text-lg font-medium">Personal Finance</div>
                         <p className="text-sm leading-tight text-muted-foreground">
                           Learn budgeting, investing, and money management
@@ -38,7 +39,7 @@ export function Navbar() {
                   </li>
                   <li>
                     <NavigationMenuLink asChild>
-                      <Link href={process.env.NODE_ENV === 'production' ? '/SkillBit/category/tech' : '/category/tech'} className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
+                      <Link href={withBasePath('/category/tech')} className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
                         <div className="text-sm font-medium leading-none">Technology</div>
                         <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
                           Quick tech tips and digital skills
@@ -48,7 +49,7 @@ export function Navbar() {
                   </li>
                   <li>
                     <NavigationMenuLink asChild>
-                      <Link href={process.env.NODE_ENV === 'production' ? '/SkillBit/category/diy' : '/category/diy'} className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
+                      <Link href={withBasePath('/category/diy')} className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
                         <div className="text-sm font-medium leading-none">DIY & Crafts</div>
                         <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
                           Hands-on projects and creative skills
@@ -62,7 +63,7 @@ export function Navbar() {
             <NavigationMenuItem>
               <NavigationMenuLink asChild>
                 <Link 
-                  href={process.env.NODE_ENV === 'production' ? '/SkillBit/courses' : '/courses'}
+                  href={withBasePath('/courses')}
                   className="group inline-flex h-10 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50"
                 >
                   Browse Courses
@@ -72,7 +73,7 @@ export function Navbar() {
             <NavigationMenuItem>
               <NavigationMenuLink asChild>
                 <Link 
-                  href={process.env.NODE_ENV === 'production' ? '/SkillBit/test' : '/test'}
+                  href={withBasePath('/test')}
                   className="group inline-flex h-10 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50"
                 >
                   Test Page
@@ -84,10 +85,10 @@ export function Navbar() {
 
         <div className="flex items-center gap-4">
           <Button variant="outline" asChild>
-            <Link href={process.env.NODE_ENV === 'production' ? '/SkillBit/sign-in' : '/sign-in'}>Sign In</Link>
+            <Link href={withBasePath('/sign-in')}>Sign In</Link>
           </Button>
           <Button asChild>
-            <Link href={process.env.NODE_ENV === 'production' ? '/SkillBit/courses' : '/courses'}>Get Started</Link>
+            <Link href={withBasePath('/courses')}>Get Started</Link>
           </Button>
         </div>
       </div>

@@ -5,9 +5,10 @@
   "homepage": "https://volanalytics.github.io/SkillBit",
   "scripts": {
     "dev": "PORT=8000 next dev --turbopack",
-    "build": "next build",
+    "build": "next build && touch out/.nojekyll",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "export": "next export"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.0.1",

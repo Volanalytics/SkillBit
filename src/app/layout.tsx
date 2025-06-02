@@ -10,8 +10,11 @@ const fontSans = FontSans({
   variable: "--font-sans",
 })
 
-const isProd = process.env.NODE_ENV === 'production'
-const baseUrl = isProd ? 'https://volanalytics.github.io/SkillBit' : 'http://localhost:8000'
+import { getBasePath } from "@/lib/path"
+
+const baseUrl = process.env.NODE_ENV === 'production' 
+  ? 'https://volanalytics.github.io'
+  : 'http://localhost:8000'
 
 export const metadata: Metadata = {
   title: "SkillBit - AI-Powered Micro-Learning Platform",
@@ -21,7 +24,7 @@ export const metadata: Metadata = {
   creator: "SkillBit",
   publisher: "SkillBit",
   robots: "index, follow",
-  metadataBase: new URL(baseUrl)
+  metadataBase: new URL(baseUrl + getBasePath())
 }
 
 export const viewport = {

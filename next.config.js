@@ -14,6 +14,7 @@ const nextConfig = {
     ],
   },
   assetPrefix: '/SkillBit/',
+  trailingSlash: true,
 }
 
 module.exports = nextConfig

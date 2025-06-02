@@ -33,8 +33,14 @@ jobs:
       - name: Install dependencies
         run: npm ci
       
+      - name: List files before build
+        run: ls -la
+      
       - name: Build with Next.js
         run: npm run build
+      
+      - name: List output directory
+        run: ls -la out/
       
       - name: Add .nojekyll file
         run: touch ./out/.nojekyll

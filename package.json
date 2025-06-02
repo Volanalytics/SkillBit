@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "PORT=8000 next dev --turbopack",
-    "build": "next build && touch out/.nojekyll",
+    "build": "next build && touch out/.nojekyll && cp -r .github out/",
     "start": "next start",
     "lint": "next lint"
   },

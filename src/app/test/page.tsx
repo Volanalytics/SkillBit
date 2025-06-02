@@ -1,4 +1,5 @@
-import { getBasePath } from "@/lib/path"
+import { getBasePath, withBasePath } from "@/lib/path"
+import Link from "next/link"
 
 export default function TestPage() {
   const isProd = process.env.NODE_ENV === 'production'
@@ -46,9 +47,9 @@ export default function TestPage() {
             <div className="space-y-4">
               <p>Try these links to test navigation:</p>
               <div className="flex gap-4">
-                <a href={basePath || '/'} className="text-primary hover:underline">Home</a>
-                <a href={`${basePath}/courses`} className="text-primary hover:underline">Courses</a>
-                <a href={`${basePath}/dashboard`} className="text-primary hover:underline">Dashboard</a>
+                <Link href={withBasePath('/')} className="text-primary hover:underline">Home</Link>
+                <Link href={withBasePath('/courses')} className="text-primary hover:underline">Courses</Link>
+                <Link href={withBasePath('/dashboard')} className="text-primary hover:underline">Dashboard</Link>
               </div>
             </div>
           </section>

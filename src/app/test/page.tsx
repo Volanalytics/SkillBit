@@ -2,8 +2,9 @@ import { getBasePath } from "@/lib/path"
 
 export default function TestPage() {
   const isProd = process.env.NODE_ENV === 'production'
-  const baseUrl = isProd ? 'https://volanalytics.github.io/SkillBit' : 'http://localhost:8000'
+  const baseUrl = isProd ? 'https://volanalytics.github.io' : 'http://localhost:8000'
   const basePath = getBasePath()
+  const fullUrl = baseUrl + basePath
 
   return (
     <main className="min-h-screen pt-24">
@@ -21,6 +22,8 @@ export default function TestPage() {
                 <li><strong>NODE_ENV:</strong> {process.env.NODE_ENV}</li>
                 <li><strong>Is Production:</strong> {String(isProd)}</li>
                 <li><strong>Base URL:</strong> {baseUrl}</li>
+                <li><strong>Base Path:</strong> {basePath}</li>
+                <li><strong>Full URL:</strong> {fullUrl}</li>
               </ul>
             </div>
           </section>

@@ -1,6 +1,9 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  output: 'export',
+  basePath: '/SkillBit',
   images: {
+    unoptimized: true,
     remotePatterns: [
       {
         protocol: 'https',
@@ -10,6 +13,7 @@ const nextConfig = {
       },
     ],
   },
+  assetPrefix: '/SkillBit/',
 }
 
 module.exports = nextConfig

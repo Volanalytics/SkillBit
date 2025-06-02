@@ -12,15 +12,15 @@ const nextConfig = {
       },
     ],
   },
+  trailingSlash: true,
 }
 
-const isGithubActions = process.env.GITHUB_ACTIONS || false
-
-if (isGithubActions) {
-  // trim off `<owner>/`
+// Handle GitHub Pages deployment
+if (process.env.GITHUB_ACTIONS) {
   const repo = process.env.GITHUB_REPOSITORY.replace(/.*?\//, '')
   nextConfig.basePath = `/${repo}`
   nextConfig.assetPrefix = `/${repo}/`
+  nextConfig.images.path = `/${repo}/_next/image`
 }
 
 module.exports = nextConfig

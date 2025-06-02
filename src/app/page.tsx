@@ -48,10 +48,10 @@ export default function Home() {
           </p>
           <div className="flex justify-center gap-4 animate-in fade-in slide-in-from-bottom-10 duration-1000 delay-300">
             <Button size="lg" className="transition-transform hover:scale-105" asChild>
-              <Link href="/courses">Get Started</Link>
+              <Link href="/SkillBit/courses">Get Started</Link>
             </Button>
             <Button size="lg" variant="outline" className="transition-transform hover:scale-105" asChild>
-              <Link href="/courses">Browse Courses</Link>
+              <Link href="/SkillBit/courses">Browse Courses</Link>
             </Button>
           </div>
         </div>
@@ -100,7 +100,7 @@ export default function Home() {
             Join thousands of learners mastering new skills in minutes.
           </p>
           <Button size="lg" className="transition-transform hover:scale-105" asChild>
-            <Link href="/courses">Get Started Now</Link>
+            <Link href="/SkillBit/courses">Get Started Now</Link>
           </Button>
         </div>
       </section>
